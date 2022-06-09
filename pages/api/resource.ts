@@ -19,6 +19,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   const emojify = (text: string) => twemoji.parse(text);
   const logo = "https://testingaccessibility.com/assets/logo-mark@2x.png";
+
   const content = `
 <!DOCTYPE html>
 <html lang="en">
@@ -108,14 +109,14 @@ img.emoji {
 }
 </style>
 <div class="flex-shrink-0">
-<img src="${image}" width="480" height="480" />
+${image ? `<img src="${image}" width="480" height="480" />` : ""}
 </div>
 <main class="flex flex-col justify-center h-full w-full pl-8">
 <div class="flex items-center space-x-6 pb-8">
 </div>
   <div class="resize">
     ${emojify(title)}
-    <div class="orange text-4xl pt-10">with Marcy Sutton</div>
+    <div class="orange text-4xl pt-10">Marcy Sutton</div>
   </div>
   
   <div class="border">
