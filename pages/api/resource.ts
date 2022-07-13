@@ -116,7 +116,7 @@ ${image ? `<img src="${image}" width="480" height="480" />` : ""}
 </div>
   <div class="resize">
     ${emojify(title)}
-    <div class="orange text-4xl pt-10">Marcy Sutton</div>
+    <div class="orange text-4xl pt-10">Testing Accessibility by Marcy Sutton</div>
   </div>
   
   <div class="border">
