@@ -7,7 +7,7 @@ import times from "lodash/times";
 import twemoji from "twemoji";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const { title, image, byline }: any = req.query;
+  const { title, image, byline = `Testing Accessibility by Marcy Sutton` }: any = req.query;
   const browser = await launchChromium();
 
   const context = await browser.newContext();
@@ -116,7 +116,7 @@ ${image ? `<img src="${image}" width="480" height="480" />` : ""}
 </div>
   <div class="resize">
     ${emojify(title)}
-    <div class="orange text-4xl pt-10">Testing Accessibility by Marcy Sutton</div>
+    <div class="orange text-4xl pt-10">${emojify(byline)}</div>
   </div>
   
   <div class="border">
